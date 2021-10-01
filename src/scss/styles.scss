@@ -2,10 +2,12 @@
   --Dark-Blue: hsl(240, 38%, 20%);
   --Grayish-Blue: hsl(240, 18%, 77%);
   --Font-family: 'Inter', sans-serif;
-  --Font-size: 31px;
   --Name-Weight: 700;
   --job-Weight: 500;
   --text-Weight: 300;
+  --bgc-Card: bisque;
+  --mobile-resolution: 375px;
+  --desktop-resolution: 1440px;
 }
 
 *,
@@ -20,103 +22,131 @@ img {
 
 body {
   font-family: var(--Font-family);
-  font-size: var(--Font-Size);
   margin: 0;
-  color: var(--Dark-Blue)
+  color: var(--Dark-Blue);
+  background-color: red;
+  display: flex;
 }
 
 .container {
-  text-align: center;
+  height: 100vh;
+  width: 200vw;
+  background-color: chocolate;
+  display: grid;
+  grid-template-columns: repeat(2, 100vw);
+  overflow-y: hidden;
 }
 
 .card {
-  display: grid;
-  height: 100vh;
-  padding: 2rem;
-  position: relative;
+  background-color: gold;
+  text-align: center;
 
-  &::after{
-    content: "";
-    position: absolute;
-    background-image: url(../images/pattern-curve.svg);
-    width: 100%;
-    height: 75px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 0;
-  }
-  
   &__image {
-    background-image: url(../../images/pattern-bg.svg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-
-  &__image--profile {
-    max-width: 75%;
-    border-radius: 7px;
-    box-shadow: 0 20px 20px -15px rgba(83, 83, 102, 0.3);
-  }
-
-  &__image--arrow {
-    position: absolute;
-    bottom: 0;
-    transform: translate(0, -16px);
-    width: 75px;
-    height: 39px;
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 25px;
-  }
-
-  &__image--arrow .arrow {
-    width: 15px;
-    height: 11px;
-  }
-}
-
-.card__info {
-  padding-top: 3rem;
-
-  &--text {
-    width: 100%;
-    margin: 0;
-    font-weight: var(--text-Weight);
-    line-height: 22px;
-    font-size: 18px;
-    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 3rem 0 5rem;
+    position: relative;
 
     &::before {
-      content: ' ';
+      content: "";
       position: absolute;
-      background-image: url(../images/pattern-quotes.svg);
-      width: 100px;
-      height: 100px;
-      top: -25px;
+      width: 100%;
+      height: 121%;
+      background-image: url(/images/pattern-bg.svg);
       background-repeat: no-repeat;
-      background-size: 63px 49px;
       background-position-x: center;
+      background-size: contain;
+    }
+
+    &--profile {
+      max-width: 70%;
+      border-radius: 5px;
+      z-index: 100;
     }
   }
 
-  &--name {
-    font-size: 17px;
-    margin: 19px 0 3px 0;
+  &__arrow {
+    background-color: var(--bgc-Card);
+    width: 5rem;
+    height: 2.3rem;
+    position: fixed;
+    transform: translate(calc(50vw - 50%), 289px);
+    border-radius: 31px;
+    display: flex;
+    overflow: hidden;
+    z-index: 150;
+
+    & .arrow {
+      width: 50%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--prev {
+      background-image: url(/images/icon-prev.svg);
+
+    }
+
+    &--next {
+      background-image: url(../images/icon-next.svg);
+      //background-position-x: right;
+
+    }
   }
 
-  &--job {
-    margin: 0;
-    color: rgba(186, 186, 207, 5);
-    font-size: 15px;
+  &__info {
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 71px;
+      background-image: url(/images/pattern-curve.svg);
+      background-repeat: no-repeat;
+      background-position-x: left;
+      background-size: contain;
+      bottom: 0;
+      left: 0;
+    }
+
+    &--text {
+      margin: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        background-image: url(/images/pattern-quotes.svg);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: contain;
+        left: 0;
+        transform: translateY(-25px);
+
+      }
+    }
+
+    &>blockquote {
+      padding: 0 1.5rem;
+      line-height: 23px;
+      font-size: 18px;
+      margin: 0;
+      font-Weight: var(--text-Weight);
+    }
+
+    &--name {
+      font-size: 1rem;
+      margin: 24px 0 0;
+    }
+
+    &--job {
+      color: rgba(51, 85, 68, .467);
+      margin: 3px;
+      font-size: 16px;
+    }
   }
+
 }

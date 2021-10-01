@@ -9,27 +9,27 @@ html(lang="es")
     link(rel="stylesheet", href="css/styles.css")
     title Testimonial Slider
   body
-    .container
-      section.card
+    .container#container
+      section.card#card
         .card__image
-          img.card__image--profile(src="../images/image-tanya.jpg", alt="photo tania")
-          .card__image--arrow
-            img.arrow.arrow__prev(src="../images/icon-prev.svg", alt="arrow previus")
-            img.arrow.arrow__next(src="../images/icon-next.svg", alt="arrow next")
+          img(src="/images/image-tanya.jpg", alt="photo tanya").card__image--profile
+          .card__arrow--rev.arrow
         .card__info
-          blockquote.card__info--text  " I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course nough. I’m now in the job of my dreams and so excited about the future."
+          p.card__info--text
+            blockquote  " I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course nough. I’m now in the job of my dreams and so excited about the future."
           h2.card__info--name Tanya Sinclair
           p.card__info--job UX Engineer
-
+     
       section.card
         .card__image
-          img.card__image--profile(src="../images/image-john.jpg", alt="photo john")
-          .card__image--arrow
-            img.arrow.arrow__prev(src="../images/icon-prev.svg", alt="arrow previus")
-            img.arrow.arrow__next(src="../images/icon-next.svg", alt="arrow next")
+          img.card__image--profile(src="/images/image-john.jpg", alt="photo john")
         .card__info
-          blockquote.card__info--text " If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about   starting up as a professional developer."
+          p.card__info--text 
+            blockquote "If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about   starting up as a professional developer."
           h2.card__info--name John Tarkpor
-          p.card__info--job Junior Front-end Developer
+          p.card__info--job Junior Front-end Developer 
   
+      .card__arrow#card__arrow
+        .card__arrow--prev.arrow#prev
+        .card__arrow--next.arrow#next
     script(src="js/scripts-min.js")

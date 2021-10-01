@@ -1,1 +1,1 @@
-"use strict";
+"use strict";var htmlElement=document.querySelector("html");console.log(htmlElement),addEventListener("click",(function(e){console.log(htmlElement.clientHeight)}));
