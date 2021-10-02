@@ -10,36 +10,46 @@
   --desktop-resolution: 1440px;
 }
 
+/*  variable sass MEDIA QUERIES */
+$desktop: "(min-width: 1024px)";
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-}
-
 body {
   font-family: var(--Font-family);
   margin: 0;
   color: var(--Dark-Blue);
-  background-color: red;
   display: flex;
 }
 
 .container {
   height: 100vh;
   width: 200vw;
-  background-color: chocolate;
+  background-color: currentColor;
   display: grid;
   grid-template-columns: repeat(2, 100vw);
-  overflow-y: hidden;
+  overflow: hidden;
+
 }
 
 .card {
   background-color: gold;
   text-align: center;
+
+  @media #{$desktop} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 80vw;
+    height: 80vh;
+    margin-block: auto;
+    margin-inline: auto;
+    box-shadow: 10px 10px 10px rgba(15, 194, 226, 0.3);
+  }
 
   &__image {
     display: flex;
@@ -47,6 +57,11 @@ body {
     align-items: center;
     margin: 3rem 0 5rem;
     position: relative;
+
+    @media #{$desktop} {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
 
     &::before {
       content: "";
@@ -70,12 +85,18 @@ body {
     background-color: var(--bgc-Card);
     width: 5rem;
     height: 2.3rem;
-    position: fixed;
-    transform: translate(calc(50vw - 50%), 289px);
+    position: absolute;
+    transform: translate(calc(50vw - 50%), calc(70vw + 2rem));
     border-radius: 31px;
     display: flex;
     overflow: hidden;
     z-index: 150;
+    gap: 10px;
+
+    @media #{$desktop} {
+      transform: translate(calc(61vw - 50%), 75vh);
+      box-shadow: -20px 9px 17px rgba(0, 0, 0, .3), 20px 9px 17px rgba(0, 0, 0, .3);
+    }
 
     & .arrow {
       width: 50%;
@@ -86,17 +107,25 @@ body {
 
     &--prev {
       background-image: url(/images/icon-prev.svg);
-
+      cursor: pointer;
     }
 
     &--next {
       background-image: url(../images/icon-next.svg);
-      //background-position-x: right;
-
+      cursor: pointer;
     }
   }
 
   &__info {
+
+    @media #{$desktop} {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
 
     &::after {
       content: "";
@@ -109,6 +138,12 @@ body {
       background-size: contain;
       bottom: 0;
       left: 0;
+
+      @media #{$desktop} {
+        width: 50%;
+        height: 100px;
+        transform: translate(10vw, -10vh);
+      }
     }
 
     &--text {
@@ -126,6 +161,10 @@ body {
         left: 0;
         transform: translateY(-25px);
 
+        @media #{$desktop} {
+          left: 379px;
+          width: 100px;
+        }
       }
     }
 
@@ -135,6 +174,14 @@ body {
       font-size: 18px;
       margin: 0;
       font-Weight: var(--text-Weight);
+
+      @media #{$desktop} {
+        width: 100%;
+        text-align: start;
+        font-size: 22px;
+        transform: translateX(168px);
+        z-index: 100;
+      }
     }
 
     &--name {

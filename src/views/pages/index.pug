@@ -10,7 +10,7 @@ html(lang="es")
     title Testimonial Slider
   body
     .container#container
-      section.card#card
+      section.card#card(data-direction="prev")
         .card__image
           img(src="/images/image-tanya.jpg", alt="photo tanya").card__image--profile
           .card__arrow--rev.arrow
@@ -20,7 +20,7 @@ html(lang="es")
           h2.card__info--name Tanya Sinclair
           p.card__info--job UX Engineer
      
-      section.card
+      section.card(data-direction="next")
         .card__image
           img.card__image--profile(src="/images/image-john.jpg", alt="photo john")
         .card__info

@@ -1,1 +1,1 @@
-"use strict";var htmlElement=document.querySelector("html");console.log(htmlElement),addEventListener("click",(function(e){console.log(htmlElement.clientHeight)}));
+"use strict";var card=document.querySelectorAll(".card"),cardArrow=document.getElementById("card__arrow");console.log(card[0]);var translateCard=function(r){console.log(r)};cardArrow.addEventListener("click",(function(r){console.log(r)}));
