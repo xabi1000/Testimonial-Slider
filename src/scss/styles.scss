@@ -13,6 +13,9 @@
 /*  variable sass MEDIA QUERIES */
 $desktop: "(min-width: 1024px)";
 
+
+
+
 *,
 *::after,
 *::before {
@@ -35,6 +38,21 @@ body {
   overflow: hidden;
 
 }
+
+/* CSS ANIMATION */
+
+.ToRight {
+  transform: translateX(-100vw);
+  transition: 1s;
+}
+
+.ToLeft {
+  transform: translateX(0vw);
+  transition: 1s;
+}
+
+
+/* CSS ANIMATION */
 
 .card {
   background-color: gold;
@@ -142,7 +160,7 @@ body {
       @media #{$desktop} {
         width: 50%;
         height: 100px;
-        transform: translate(10vw, -10vh);
+        transform: translate(0vw, 0vh);
       }
     }
 

@@ -6,12 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/styles.css?t=1633211160767"/>
+    <link rel="stylesheet" href="css/styles.css?t=1633378063320"/>
     <title>Testimonial Slider</title>
   </head>
   <body>
     <div class="container" id="container">
-      <section class="card" id="card" data-direction="prev">
+      <section class="card ToRight" id="card-tanya">
         <div class="card__image"><img class="card__image--profile" src="/images/image-tanya.jpg" alt="photo tanya"/>
           <div class="card__arrow--rev arrow"></div>
         </div>
@@ -23,7 +23,7 @@
           <p class="card__info--job">UX Engineer</p>
         </div>
       </section>
-      <section class="card" data-direction="next">
+      <section class="card ToRight" id="card-jhon">
         <div class="card__image"><img class="card__image--profile" src="/images/image-john.jpg" alt="photo john"/></div>
         <div class="card__info">
           <p class="card__info--text"> 
@@ -34,10 +34,10 @@
         </div>
       </section>
       <div class="card__arrow" id="card__arrow">
-        <div class="card__arrow--prev arrow" id="prev"></div>
-        <div class="card__arrow--next arrow" id="next"></div>
+        <div class="card__arrow--prev arrow" id="prev" data-direction="prev"></div>
+        <div class="card__arrow--next arrow" id="next" data-direction="next"></div>
       </div>
     </div>
-    <script src="js/scripts-min.js?t=1633211160767"></script>
+    <script src="js/scripts-min.js?t=1633378063320"></script>
   </body>
 </html>
